@@ -9,6 +9,5 @@ A paradigm means any approach to organizing our code that, makes it easy to add 
 ## Some advantages of OOP
 
 — Easy to add features and functionality
-— Easy for us and other developers to reason about (a
-clear structure)
+— Easy for us and other developers to reason about (clear structure)
 — Performant (efficient in terms of memory)
