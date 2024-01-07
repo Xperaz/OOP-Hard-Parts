@@ -1,10 +1,10 @@
 # Object Creation
 
-Object allow us to implement functionalty on some data in same place, => `encapsulation`, in another word object allow us to put appropriate functionality with the apprpriate data that related to each other and bundel them up into what we call and `Object`.
+Object allows us to implement functionality on some data in the same place, => `encapsulation`, in other words, object allows us to put appropriate functionality with the appropriate data that is related to each other and bundles them up into what we call an `Object`.
 
-## First object
+## Create First object
 
-**Let's suppose we're building a quiz game with users**
+**suppose we're building a quiz game with users**
 
 Some of our users
 
@@ -27,7 +27,7 @@ Functionality: Ability to increase score.
 
 ```
 
-We can also create empty object and assign properties to it using `dot notation`:
+We can also create an empty object and assign properties to it using `dot notation`:
 
 ```
     const user2 = {}; //create an empty object
@@ -39,9 +39,9 @@ We can also create empty object and assign properties to it using `dot notation`
     };
 ```
 
-## Creat Object using Object.create
+## Create Object using Object.create
 
-**Object.create**: is a built in method that whenever we pass through it, it will create an empty object always even we give another object as argument.
+**Object.create**: is a built-in method that whenever we pass through it, will always create an empty object even if we give it another object as argument.
 
 ```
     const user3 = Object.create(null);
@@ -55,20 +55,20 @@ We can also create empty object and assign properties to it using `dot notation`
 
 ## Breaking DRY Principles
 
-=> The problem with creating object like this is we always need to create sperate object for each user. and our code got so repetitive so we break `DRY Principle` "Don't repeat yourself", and also not effecient if we have lot of users.
-
-[DRY Principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+=> The problem with creating objects like this is we always need to create separate objects for each user. and our code got so repetitive so we broke `DRY Principle` "Don't repeat yourself", and also not efficient if we have a lot of users.
 
 ## Creating Objects with Functions
 
-Our first solution for the problem above is create object using `Funtion`:
+Our first solution for the problem above is to create an object using `Function`:
 
-How things work inside javascript excution context:
+How things work inside the javascript execution context:
 
 ![](images/img1.png?raw=true)
 
-This approach fix our DRY problem and also it's simple and easy to reason about!, but it comes with another downside.
-Each time we create a new user we make space in our
-computer's memory for all our data and functions. But
-our functions are just copies
-Is there a better way?
+This approach fixes our DRY problem and also it's simple and easy to reason about!, but it comes with another downside.
+Each time we create a new user we make space in our computer's memory for all our data and functions. But our functions are just copies.
+
+## Ressouces
+
+[DRY Principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+
