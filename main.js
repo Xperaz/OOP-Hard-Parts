@@ -1,16 +1,27 @@
-const user1 = {
-    name: "Phil",
-    score: 4,
-    increment: function() {
-    user1.score++;
+const userFuntionStore = {
+    increment: function(){
+        this.score++;
+    },
+    decrement: function(){
+        this.score--;
     }
-    };
+}
 
-const user3 = Object.create(null);
-    user3.name = "Eva";
-    user3.score = 9;
-    user3.increment = function() {
-    user3.score++;
-    };
+function createUser(name, score) {
+    const newUser = Object.create(userFuntionStore);
+    newUser.name = name;
+    newUser.score = score;
+    return newUser;
+}
 
-    console.log(user3);
+const user1 = createUser('azedine', 5);
+const user2 = createUser('xperaz', 10);
+
+console.log(user1);
+user1.increment();
+console.log(user1);
+user1.decrement();
+console.log(user1);
+
+
+

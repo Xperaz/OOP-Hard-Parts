@@ -61,12 +61,30 @@ We can also create an empty object and assign properties to it using `dot notati
 
 Our first solution for the problem above is to create an object using `Function`:
 
+```
+    function userCreator(name, score) {
+    const newUser = {};
+    newUser.name = name;
+    newUser.score = score;
+    newUser.increment = function() {
+    newUser.score++;
+    };
+    return newUser;
+    };
+    const user1 = userCreator("Phil", 4);
+    const user2 = userCreator("Julia", 5);
+    user1.increment()
+```
+
 How things work inside the javascript execution context:
 
 ![](images/img1.png?raw=true)
 
-This approach fixes our DRY problem and also it's simple and easy to reason about!, but it comes with another downside.
-Each time we create a new user we make space in our computer's memory for all our data and functions. But our functions are just copies.
+This approach fixes our `DRY` problem and also it's simple and easy to reason about!, but it comes with another downside.Each time we create a new user we make space in our computer's memory for all our data and functions. But our functions are just copies.
+
+## Solution
+
+see documentation [here](Nots/Prototype_&_New.md)
 
 ## Ressouces
 
