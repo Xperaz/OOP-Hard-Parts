@@ -80,11 +80,14 @@ How things work inside the javascript execution context:
 
 ![](images/img1.png?raw=true)
 
+> **Memory**: stands for global memory (store variables and objects...) of global Scope, and **local memory** stand for (variables and objects ...) that are available only within a specific local context (scope).
+
+
 This approach fixes our `DRY` problem and also it's simple and easy to reason about!, but it comes with another downside.Each time we create a new user we make space in our computer's memory for all our data and functions. But our functions are just copies.
 
 ## Solution
 
-see documentation [here](Nots/Prototype_&_New.md)
+see documentation [here](Nots/3-Prototype_&_New.md)
 
 ## Ressouces
 
