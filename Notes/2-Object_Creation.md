@@ -87,7 +87,7 @@ This approach fixes our `DRY` problem and also it's simple and easy to reason ab
 
 ## Solution
 
-see documentation [here](Notes/3-Prototype_&_New.md)
+see documentation [here](https://github.com/Xperaz/OOP-Hard-Parts/blob/main/Notes/3-Prototype_%26_New.md)
 
 ## Ressouces
 
