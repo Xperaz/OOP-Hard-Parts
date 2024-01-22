@@ -31,26 +31,26 @@ To solve this problem we can use `prototype`.
 
 ```
 
-- The `Object.create() ` method creates a new object and allows us to specify an object that will be used as the new object's prototype. now `userFunctionStore` is prototype to `user1` object. => `user1` and `user2` have hidden bond up to `userFunctionCreator`.
+- The `Object.create() ` method creates a new object and allows us to specify an object that will be used as the new object's prototype. now `userFunctionStore` is a prototype of the `user1` object. => `user1` and `user2` have hidden bond up to `userFunctionCreator`.
 
-Look at slide (19, 20) in [PDF](javascript-hard-parts-oop.pdf). for better understanding.
+Take a look at slides (19, and 20) in [PDF](javascript-hard-parts-oop.pdf). for a better understanding.
 
 Memory flow of this code:
 
 ![](images/img2.png?raw=true)
 
 
-- In the console when we print every object we notice lot of extra stuff, one of them is `__proto__`.
-- ** __proto__ **:  exist on every object we create, in our case when we return `newUser` object it brings with it its little hidden bond `__proto__` that have refrence link to `userFunctionStore`.
+- In the console when we print every object we notice a lot of extra stuff, one of them is `__proto__`.
+- **__proto__**:  exists on every object we create, in our case when we return the `newUser` object it brings with it its little hidden bond `__proto__` that has a reference link to `userFunctionStore`.
 
-- When we try to access `increment` function from `user1`, if this function not exist in `user1` object, javascript engine look on `__proto__` property that have link to `userFunctionStore` where it find `increment`. => this mecanism by javascript is prototype nature (feature), means it don't give up when it can't find something in an object directly, but instead looking elsewhere.
+- When we try to access the `increment` function from `user1`, if this function does not exist in the `user1` object, the javascript engine looks on the `__proto__` property that has a link to `userFunctionStore` where it finds `increment`. => This mechanism by javascript is prototype nature (feature), which means it doesn't give up when it can't find something in an object directly, but instead looks elsewhere.
 
 > [!NOTE]  
-> `__proto__` and `prototype` are totally different things.
+> `__proto__` and `prototype` are different things.
 
-It' Sophisticated solution but not standard. javascript gives some tools to make it more simpler:
+It's a Sophisticated solution but not standard. javascript gives some tools to make it simpler:
 
-see [Solution 3 autmation keyword new](4-New_Keyword.md)
+see [Solution 3 automation keyword new](4-New_Keyword.md)
 
 
 
