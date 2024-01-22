@@ -59,3 +59,5 @@ see [Solution 3 automation keyword new](4-New_Keyword.md)
 [Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 
 [Visualized: Prototypal Inheritance](https://dev.to/lydiahallie/javascript-visualized-prototypal-inheritance-47co)
+
+[JavaScript Prototypes and Object.create - Arabic darija](https://www.youtube.com/watch?v=UC7Jirtw1Bo&list=PLpXCAa5_yklf_vMBI4s4d5EhBOpyGe4br&index=44&t=7s)
