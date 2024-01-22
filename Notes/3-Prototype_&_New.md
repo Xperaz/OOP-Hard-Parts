@@ -50,7 +50,7 @@ Memory flow of this code:
 
 It' Sophisticated solution but not standard. javascript gives some tools to make it more simpler:
 
-see [Solution 3 autmation keyword new](Nots/4-New_Keyword.md)
+see [Solution 3 autmation keyword new](Notes/4-New_Keyword.md)
 
 
 
