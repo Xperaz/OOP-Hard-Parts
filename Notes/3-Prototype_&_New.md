@@ -33,7 +33,7 @@ To solve this problem we can use `prototype`.
 
 - The `Object.create() ` method creates a new object and allows us to specify an object that will be used as the new object's prototype. now `userFunctionStore` is a prototype of the `user1` object. => `user1` and `user2` have hidden bond up to `userFunctionCreator`.
 
-Take a look at slides (19, and 20) in [PDF](javascript-hard-parts-oop.pdf). for a better understanding.
+Take a look at slides (19, and 20) in [PDF](https://github.com/Xperaz/OOP-Hard-Parts/blob/main/javascript-hard-parts-oop.pdf). for a better understanding.
 
 Memory flow of this code:
 
