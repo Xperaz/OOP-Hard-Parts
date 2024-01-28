@@ -78,19 +78,23 @@ Let's explain this piece of code getting help from memory flow:
 > In the code I have `jump` and `play` instead of `increment` and `login` but it's the same process.
 
 - For `const user1 = new CreateUser('azedine', 27, 100);`: In first we just call the `CreateUser` function so we create a new `execution context` this one on the left side in the image above, this execution context has a ton of stuff done automatically inside of it because of `new` keyword (all keyword that written in blue color). the things that `new` generates for us are:
-    1- `this: {}`: **new** create an empty object in  `local memory` and we refer to that object using `this`. so we use this object to add `name` `age` and `score` properties for each user.
+  
+    1. `this: {}`: **new** create an empty object in  `local memory` and we refer to that object using `this`. so we use this object to add `name` `age` and `score` properties for each user.
 
-    2- **__proto__**: It is a hidden property that has reference to `CreateUser.prototype`, so this property allows us to access all methods stored in the `CreateUser.prototype` object (`jump` and `play` in this case).
+    2. **`__proto__`**: It is a hidden property that has reference to `CreateUser.prototype`, so this property allows us to access all methods stored in the `CreateUser.prototype` object (`jump` and `play` in this case).
 
-    3- The `new` keyword auto returns the object at the end of the function to `user1`.
+    2. The `new` keyword auto returns the object at the end of the function to `user1`.
 
     > **local memory**: is the memory of the `CreateUser` function where the js engine creates a memory for `name`, `score`, and also for `object` created by `new`.
 
 > [!WARNING]  
-> If we invoke `CreateUser` without the `new` keyword it will refer to a `this` that hasn't been auto-created and it will refer to a `global` or `window` object, so we will face some undefined behaviors that's why we `Upercase` the first letter of this function to let everyone know that this function needs `new` to work.
+> If we invoke `CreateUser` without the `new` keyword it will refer to a `this` that hasn't been auto-created and it will refer to a `global` or `window` object, so we will face some undefined behaviors that's why we use `Upercase` the first letter of this function to let everyone know that this function needs `new` to work.
+<br>
+<br>
 
-=> Now we have our data and functionalities bundled together.
-=> As we see `new` keyword automates a lot of work for us. and that's how it works exactly under the hood.
+> [!SUMMARY]  
+> As we see `new` keyword automates a lot of work for us. and that's how it works exactly under the hood. Now we have our data and functionalities bundled together.
+
 
 ## Ressources
 
