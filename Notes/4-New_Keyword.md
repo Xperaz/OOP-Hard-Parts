@@ -73,7 +73,7 @@ Let's explain this piece of code getting help from memory flow:
 - **CreateUser** is function + object and this object by default has `prototype` which a an Object (this object is empty in the beginning). this object is where we store the single versions of each function we want. so any object that comes from  `CreateUser` has access to those functions. 
 > We need to make the first letter of the function Uppercase to let other developers know that this function needs a `new` keyword to work (constructor function).
 
-- **CreateUser.prototype.increment**: Javascript here looks for  the `CreateUser` object and then looks for the `prototype` property of the CreateUser object (function object combo) which is an object and we assign a `jump` function to it. and the same thing for `play`.
+- **CreateUser.prototype.increment**: Javascript here looks for  the `CreateUser` object and then looks for the `prototype` property of the CreateUser object (function object combo) which is an object and we assign a `jump` function to it. and the same thing for `play`. => so we add this function to the `prototype` object.
 
 > In the code I have `jump` and `play` instead of `increment` and `login` but it's the same process.
 
