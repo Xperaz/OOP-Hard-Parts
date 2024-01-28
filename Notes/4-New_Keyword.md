@@ -11,9 +11,9 @@ When we call the constructor function with new in front we automate 2 things:
 
 But now we need to adjust how we write the body of CreateUser - how can we:
 
-- Refer to the auto-created object? : we can use `this`;
-- Know where to put our single copies of functions?: we can use `prototype prototype inheritance`.
-> more details about prototype inheritance in next sections.
+- Could you refer to the auto-created object? : we can use `this`;
+- Know where to put our single copies of functions?: we can use `prototype inheritance`.
+> More details about prototype inheritance are in the next sections.
 
 ## Functions are both objects and functions
 
@@ -30,12 +30,12 @@ multiplyBy2.stored // 5
 multiplyBy2.prototype // {}
 
 ```
-- function can act as object, `multiplyBy2.stored` that give access to stored value when we use dot notation that looks on its object bit, 
-- but also it doesn't lose its fact that is a function `multiplyBy2()` when we use `()` it act as function again.
+- function can act as an object, `multiplyBy2.stored` that gives access to stored value when we use dot notation that looks at its object bit, 
+- but also it doesn't lose its fact that is a function `multiplyBy2()` when we use `()` it acts as a function again.
 
-Now We could use the fact that all functions have a default property on their object version, `prototype`,which is itself an object - to replace our functionStore object.
+Now We could use the fact that all functions have a default property on their object version, `prototype`, which is itself an object - to replace our function store object.
 
-## New Keyword and Share Funtions with prototype
+## New Keyword and Share Functions with prototype
 
 ```
 function CreateUser(name, age, score) {
@@ -66,31 +66,31 @@ Memory flow of this code:
 
 ![](images/img3.png?raw=true)
 
-Let's explain this piece of code geting help from memory flow:
+Let's explain this piece of code getting help from memory flow:
 
-> for things that writen in `blue` are the stuff that `new` keyword gifted to us under the hood.
+> for things written in `blue` are the stuff that `new` keyword gifted to us under the hood.
 
-- **CreateUser** is function + object and this object by default has `prototype` which a an Object (this object is empty in beginning). this object where we store our single versions of each function we want. so any object come from  `CreateUser` has access to those functions. 
-> We need to make first letter of function Upercase to let other developer known that this function need `new` keyword to work (constructor function).
+- **CreateUser** is function + object and this object by default has `prototype` which a an Object (this object is empty in the beginning). this object is where we store the single versions of each function we want. so any object that comes from  `CreateUser` has access to those functions. 
+> We need to make the first letter of the function Uppercase to let other developers know that this function needs a `new` keyword to work (constructor function).
 
-- **CreateUser.prototype.increment**: Javscript here look for  `CreateUser` object and then look for the `prototype` property of CreateUser object (function object combo) which and object and we assign `jump` function to it. and same thing for `login`.
+- **CreateUser.prototype.increment**: Javascript here looks for  the `CreateUser` object and then looks for the `prototype` property of the CreateUser object (function object combo) which is an object and we assign a `jump` function to it. and the same thing for `play`.
 
-> in code i have `jump` and `play` instead of `incrment` and `login` but its the same process.
+> In the code I have `jump` and `play` instead of `increment` and `login` but it's the same process.
 
-- For `const user1 = new CreateUser('azedine', 27, 100);` :In first we just call `CreateUser` funtion so we create new `excution context` this one in left side in image above, this excution context has ton of stuff done automatically inside of it because of `new` keyword (all keyword that written in blue color). the things that `new` generate for us is:
-    1- `this: {}`: **new** create an empty object in  `local memory` and we refer to that object using `this`. so we use this object to add `name` and `age` and `score` properties for each user.
+- For `const user1 = new CreateUser('azedine', 27, 100);`: In first we just call the `CreateUser` function so we create a new `execution context` this one on the left side in the image above, this execution context has a ton of stuff done automatically inside of it because of `new` keyword (all keyword that written in blue color). the things that `new` generates for us are:
+    1- `this: {}`: **new** create an empty object in  `local memory` and we refer to that object using `this`. so we use this object to add `name` `age` and `score` properties for each user.
 
-    2- **__proto__**: Its hidden property that has refrence to `CreateUser.prototype`, so this property allow us to access all methods stored in `CreateUser.prototype` object (`jump` and `play` in this case).
+    2- **__proto__**: It is a hidden property that has reference to `CreateUser.prototype`, so this property allows us to access all methods stored in the `CreateUser.prototype` object (`jump` and `play` in this case).
 
-    3- The `new` keyword auto return the object at the end of function to `user1`.
+    3- The `new` keyword auto returns the object at the end of the function to `user1`.
 
-    > **local memory**: is the memory of `CreateUser` function where js engine create memory for `name`, `score`, also for `object` created by `new`.
+    > **local memory**: is the memory of the `CreateUser` function where the js engine creates a memory for `name`, `score`, and also for `object` created by `new`.
 
 > [!WARNING]  
-> If we invoke `CreateUser` without `new` keyword it will refer to a `this` that hasn't been auto-created and it will refer to `global` or `window` object, so we will face some undfined behaviors that's why we `Upercase` the first letter of this function to let everyone know that this function need `new` to work.
+> If we invoke `CreateUser` without the `new` keyword it will refer to a `this` that hasn't been auto-created and it will refer to a `global` or `window` object, so we will face some undefined behaviors that's why we `Upercase` the first letter of this function to let everyone know that this function needs `new` to work.
 
 => Now we have our data and functionalities bundled together.
-=> As we see `new` keyword automate lot of work for us. and that's how it work exactly under the hood.
+=> As we see `new` keyword automates a lot of work for us. and that's how it works exactly under the hood.
 
 ## Ressources
 
