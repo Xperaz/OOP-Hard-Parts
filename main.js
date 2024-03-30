@@ -1,23 +1,17 @@
-
-function CreateUser(name, age, score) {
-    this.name = name;
-    this.age = age;
-    this.score = score;
+function UserCreator(name, score) {
+  this.name = name;
+  this.score = score;
 }
+UserCreator.prototype.increment = function () {
+  const add1 = () => {
+    this.score++;
+  };
 
-CreateUser.prototype.jump = function(energy) {
-    this.score -= energy;
-}
-
-CreateUser.prototype.play = function(energy) {
-    this.score += energy;
-}
-
-const user1 = new CreateUser('azedine', 27, 100);
-
-console.log(user1); // { name: 'azedine', age: 27, score: 100 }
-user1.jump(10);
-console.log(user1); // { name: 'azedine', age: 27, score: 90 }
-user1.play(20);
-console.log(user1); // // { name: 'azedine', age: 27, score: 110 }
-
+  add1();
+};
+UserCreator.prototype.login = function () {
+  console.log("login");
+};
+const user1 = new UserCreator("Eva", 9);
+user1.increment();
+console.log(user1.score); // 9
