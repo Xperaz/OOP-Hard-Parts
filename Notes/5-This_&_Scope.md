@@ -48,7 +48,7 @@ console.log(user1.score); // 9
 ```
 
 In this case we try to increment score by 1 inside inner `add1()` inner function, But it seem that doesn't work!.
-As we saw above the ``this` point to object who call the function, but we don't call `add1()` by any object, user1 is calling only increment not its inner functions, => so by the `this` inside `add1()` function will refer to the `global/window` object. where it doesn't find any `score` property and we got `score = 9` as it is.
+As we saw above the `this` point to object who call the function, but we don't call `add1()` by any object, user1 is calling only increment not its inner functions, => so by the `this` inside `add1()` function will refer to the `global/window` object. where it doesn't find any `score` property and we got `score = 9` as it is.
 
 memory flow:
 
@@ -80,3 +80,35 @@ To solve the problem above we turn `add1()` function into an arrow function.
 Arrow functions don't have their own bindings to `this`, instead it binds `this` lexically. => lexical static scoping means: where I was born determines where i get called, in this case `add1()` born in `increment` where `this` refer to `user1`.
 
 ![](images/img6.png?raw=true)
+
+## Class Keyword
+
+We’re writing our shared methods separately from our object ‘constructor’ itself (off in the User.prototype object) Other languages let us do this all in one place.
+ES2015 lets us do so too.
+
+The class `syntactic sugar` :
+
+```
+class UserCreator {
+  constructor(name, score) {
+    this.name = name;
+    this.score = score;
+  }
+  increment() {
+    this.score++;
+  }
+  login() {
+    console.log("login");
+  }
+}
+const user1 = new UserCreator("Eva", 9);
+user1.increment(); // 10
+
+```
+
+The class let us bundle constructor and methods in one place.
+Javascript (ES06) allow us to rename function object combo with a prototype property to a `class`. and javascript will take care of putting them in prototype object. That's why we call `class` as syntactic sugar, because javascript masking the truth of using the prototype under the hood when it comes to `OOP` its just prototype under the hood to make our life easier.
+
+![](images/img7.png?raw=true)
+
+When we call `const user1 = new UserCreator("Eva", 9);` javascript engine call `constructor` first, then lookup through methods in the class and attach them to the `prototype` object like in solution 3. => the two solution are absolutely identical under the hood.
