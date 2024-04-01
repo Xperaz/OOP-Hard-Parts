@@ -1,6 +1,6 @@
 # This and scope
 
-In this section we will discover problem related to `this` keyword related to `scope` also using class for the first time.
+In this section, we will discover problems related to `this` and `scope` also using class for the first time.
 
 ## Calling a Prototype Methods
 
@@ -28,7 +28,7 @@ Memory flow:
 
 ## This keyword and scoping issue
 
-What if we want to organize our code inside one of our shared functions - perhaps by defining a new inner function
+What if we want to organize our code inside one of our shared functions - perhaps by defining a new inner function, This technique is useful when we have a large amount of code in a single function and need to divide it into smaller parts.
 
 ```
 function UserCreator(name, score) {
