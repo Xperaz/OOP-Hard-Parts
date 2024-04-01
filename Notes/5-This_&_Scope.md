@@ -1,6 +1,6 @@
 # This and scope
 
-In this section we will discover problem related to `this` keyword related to `scope` also using class for the first time.
+In this section, we will discover problems related to `this` and `scope` also using class for the first time.
 
 ## Calling a Prototype Methods
 
