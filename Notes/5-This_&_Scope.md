@@ -28,7 +28,7 @@ Memory flow:
 
 ## This keyword and scoping issue
 
-What if we want to organize our code inside one of our shared functions - perhaps by defining a new inner function
+What if we want to organize our code inside one of our shared functions - perhaps by defining a new inner function, This technique is useful when we have a large amount of code in a single function and need to divide it into smaller parts.
 
 ```
 function UserCreator(name, score) {
