@@ -36,11 +36,15 @@ memory flow:
 
 ![](images/img6.png?raw=true)
 
-When  `multiplyBy2.toString()` got executed the javascript engine checks `multiplyBy2` if there is any method called `toString` => can't find it => js engine will check `__Proto__` => since `toString` is specified for functions and not object => `__Proto__` will reference to `Function prototype` => we found `toString` and the journey is done.
+When `multiplyBy2.toString()` got executed the javascript engine checks `multiplyBy2` if there is any method called `toString` => can't find it => js engine will check `__Proto__` => since `toString` is specified for functions and not object => `__Proto__` will reference to `Function prototype` => we found `toString` and the journey is done.
 
 And for `multiplyBy2.hasOwnProperty("score")` => the js engine follows the same process but this time `hasOwnProperty("score")` is a specific method for the object => It doesn't exist in `Function Prototype` but js engine doesn't give up and continue looking to Function prototype `__Proto__` this **Proto** has reference to `Prototype Object` which has the method `hasOwnProperty` and other built-in object methods.
 That's what we call Prototype chain, js engine keeps looking into `__Proto__` until **Proto** points to `null` then the chain end.
 
+> [!WARNING]  
+> **proto** is considered outdated and somewhat deprecated. The modern methods to get/set a prototype are: Object. getPrototypeOf(obj) – returns the [[Prototype]] of obj .
+
 ## Ressources
 
 [OOP Code Smith](https://csx.codesmith.io/units/object-oriented-programming)
+[JavaScript: What’s **proto**?](https://medium.com/dev-proto/understanding-proto-in-javascript-c5a42647f04)

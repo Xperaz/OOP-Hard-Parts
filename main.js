@@ -1,9 +1,12 @@
 const obj = {
   num: 3,
+  increment: function () {
+    this.num++;
+  },
 };
-obj.num; // 3
-obj.hasOwnProperty("num"); // ? Where's this method?
-Object.prototype; // {hasOwnProperty: FUNCTION}
-
-console.log(obj.hasOwnProperty("num")); // true
-console.log(obj.hasOwnProperty("age")); // false
+const otherObj = {
+  num: 10,
+};
+obj.increment(); // obj.num now 4
+obj.increment.call(otherObj); // otherObj.num now 11
+// obj.increment.apply(otherObj);
