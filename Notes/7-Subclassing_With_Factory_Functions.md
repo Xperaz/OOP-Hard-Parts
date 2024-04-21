@@ -107,4 +107,4 @@ obj.increment.call(otherObj); // otherObj.num now 11
 
 Memory flow:
 
-![](images/img6.png?raw=true)
+![](images/img9.png?raw=true)
