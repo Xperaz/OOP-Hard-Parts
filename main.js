@@ -1,12 +1,31 @@
-const obj = {
-  num: 3,
-  increment: function () {
-    this.num++;
-  },
+function UserCreator(name, score) {
+  this.name = name;
+  this.score = score;
+}
+
+UserCreator.prototype.sayName = function () {
+  console.log("Hi", this.name);
 };
-const otherObj = {
-  num: 10,
+
+UserCreator.prototype.incrementScore = function () {
+  this.score++;
 };
-obj.increment(); // obj.num now 4
-obj.increment.call(otherObj); // otherObj.num now 11
-// obj.increment.apply(otherObj);
+
+// creating a Paid user
+
+function PaidUserCreator(name, score, balance) {
+  UserCreator.call(this, name, score);
+  this.balance = balance;
+}
+
+PaidUserCreator.prototype.incrementBalance = function () {
+  this.balance++;
+};
+
+PaidUserCreator.prototype = Object.create(UserCreator.prototype);
+
+const paidUser = new PaidUserCreator("xperaz", 20, 150);
+paidUser.sayName(); // Hi xperaz
+paidUser.incrementScore();
+
+console.log(paidUser); // { name: 'xperaz', score: 21, balance: 150 }
