@@ -1,10 +1,8 @@
 # Subclassing with new and call
 
-We will use same scenario as before (normal and paid user).
+We will use the same scenario as before (normal and paid user).
 
-**Subclassing in our earlier solution 2**:
-
-create normal user:
+**create a normal user:**
 
 ```
 function UserCreator(name, score) {
@@ -26,9 +24,9 @@ user1.incrementScore();
 console.log(user1); // { name: 'azedine', score: 11 }
 ```
 
-for normal its strait forward as before, but the problem will occur when want to scale solution to create subclass.
+When scaling the solution to create a subclass, a problem may occur even though it works fine with a small use case.
 
-**creating a paid user**:
+## Create PaidUser Subclass  using our earlier solution 2
 
 ```
 function UserCreator(name, score) {
@@ -65,7 +63,7 @@ paidUser.incrementScore();
 console.log(paidUser); // { name: 'xperaz', score: 21, balance: 150 }
 ```
 
-Let's explain the first part of creating paid user:
+Let's explain the first part of creating a paid user:
 
 ```
 function PaidUserCreator(name, score, balance) {
@@ -74,25 +72,23 @@ function PaidUserCreator(name, score, balance) {
 }
 ```
 
-To create `paidUser` we need to use `UserCreator` constructor function because paidUser is normal user with extra functionality, but there is a problem `UserCreator` require `new` keyword to work and `new` will create an new object inside `UserCreator` constructor, so we don't gonna use `new`, but we will use `UserCreator` independent of it.
+To create a `paidUser`, we need to utilize the `UserCreator` constructor function. This is because a `paidUser` is essentially a regular user with additional functionality. However, there is a problem using `UserCreator` because it requires using the `new` keyword, which creates a new object within the `UserCreator` constructor. Therefore, we cannot use `new`, but we can still utilize `UserCreator` independently from it.
 
-In this scenario `call` and `apply` come in handy, in this example we use `UserCreator.call(this, name, score)` => by `call` we pass the `this` that created by `PaidUserCreator` in `UserCreator` for creating a `PaidUser` => we override the auto created object by `new` using `call` method and make explicitly refer to `this` created by `PaidUserCreator` object. => we don't only change the reference of auto created object but also we assign the `name` and `score` to it inside `UserCreator`. then we add balance to that object so we get our `PaidUser` object from `PaidUserCreator`.
+In this scenario, the `call` and `apply` methods come in handy. In the given example, we use `UserCreator.call(this, name, score)` to create a `PaidUser`. By using the `call` method, we pass the `this` object created by `PaidUserCreator` to `UserCreator`. This allows us to override the auto-created object using the `new` keyword and explicitly refer to the `this` object created by `PaidUserCreator`. We not only change the reference of the auto-created object, but we also assign the `name` and `score` to it inside `UserCreator`. Then, we add balance to that object to get our `PaidUser` object from `PaidUserCreator`.
+
+<br/>
 
 > [!NOTE]  
-> The `apply` method can the same job as `call`.
+> The `apply` method can do the same job as `call`.
 
-**Next step**:
-`PaidUserCreator.prototype = Object.create(UserCreator.prototype);`: We **override PaidUserCreator** using `Object.create` to reefrence bound to `UserCreator` object, so the paid users have access to normal user methods and properties.
+**Next step:**
 
-**The final step**:
+- `PaidUserCreator.prototype = Object.create(UserCreator.prototype);`: first we create a new object that inherits from the `UserCreator.prototype` object using `Object.create(UserCreator.prototype)`. then we set the prototype of `PaidUserCreator` to be this new object. so the paid users have access to normal user methods and properties.
 
-```
-PaidUserCreator.prototype.incrementBalance = function () {
-  this.balance++;
-};
-```
+- `PaidUserCreator.prototype.incrementBalance` is a method added to the `PaidUserCreator`’s prototype. It’s only available on objects created with `new PaidUserCreator`.
 
-=> Now we add `incrementBalance` method `PaidUserCreator` prototype, to make sure only that only the users created by `PaidUserCreator` can use this method.
+**Finally**
+A new `PaidUserCreator` object is created with `name: xperaz`, `score: 20`, and `balance: 150`. The `incrementScore` method is called on this object, increasing its score by 1.
 
 Memory flow:
 
