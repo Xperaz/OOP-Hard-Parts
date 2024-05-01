@@ -26,7 +26,7 @@ console.log(user1); // { name: 'azedine', score: 11 }
 
 When scaling the solution to create a subclass, a problem may occur even though it works fine with a small use case.
 
-## Create PaidUser Subclass  using our earlier solution 2
+## Create PaidUser Subclass using our earlier solution 2
 
 ```
 function UserCreator(name, score) {

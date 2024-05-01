@@ -1,31 +1,39 @@
-function UserCreator(name, score) {
-  this.name = name;
-  this.score = score;
+class userCreator {
+  constructor(name, score) {
+    this.name = name;
+    this.score = score;
+  }
+
+  incrementScore() {
+    this.score++;
+  }
+
+  sayName() {
+    console.log("hello", this.name);
+  }
 }
 
-UserCreator.prototype.sayName = function () {
-  console.log("Hi", this.name);
-};
+// const user1 = new userCreator("azedine", 10);
+// user1.sayName();
+// user1.incrementScore();
+// console.log(user1.name);
 
-UserCreator.prototype.incrementScore = function () {
-  this.score++;
-};
+// paidUser
 
-// creating a Paid user
+class paidUserCreator extends userCreator {
+  constructor(paidName, score, accountBalance) {
+    super(paidName, score);
+    this.accountBalance = accountBalance;
+  }
 
-function PaidUserCreator(name, score, balance) {
-  UserCreator.call(this, name, score);
-  this.balance = balance;
+  incrementBalance() {
+    this.accountBalance++;
+  }
 }
 
-PaidUserCreator.prototype.incrementBalance = function () {
-  this.balance++;
-};
+const paidUser1 = new paidUserCreator("xperaz", 100, 250);
+paidUser1.sayName();
+paidUser1.incrementScore();
+paidUser1.incrementBalance();
 
-PaidUserCreator.prototype = Object.create(UserCreator.prototype);
-
-const paidUser = new PaidUserCreator("xperaz", 20, 150);
-paidUser.sayName(); // Hi xperaz
-paidUser.incrementScore();
-
-console.log(paidUser); // { name: 'xperaz', score: 21, balance: 150 }
+console.log(paidUser1);
