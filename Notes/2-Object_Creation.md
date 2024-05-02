@@ -1,33 +1,25 @@
 # Object Creation
 
-Object allows us to implement functionality on some data in the same place, => `encapsulation`, in other words, object allows us to put appropriate functionality with the appropriate data that is related to each other and bundles them up into what we call an `Object`.
+The object allows us to implement functionality on some data in the same place, this is what `encapsulation` is, in other words, an object will enable us to put appropriate functionality with the applicable data that is related to each other and bundle them together.
 
 ## Create First object
 
-**suppose we're building a quiz game with users**
-
-Some of our users
-
-Name: Phil
-Score: 4
-
-Name: Julia
-Score: 5
-
-Functionality: Ability to increase score.
+**Suppose we're building a quiz game that will have multiple users.**
 
 ```
-    const user1 = {
-    name: "Phil",
-    score: 4,
-    increment: function() {
+const user1 = {
+  name: "Phil",
+  score: 4,
+  // increment functionality to increase the score
+  increment: function () {
     user1.score++;
-    }
-    };
+  },
+};
 
+console.log(user1); // { name: 'Phil', score: 4, increment: [Function: increment] }
 ```
 
-We can also create an empty object and assign properties to it using `dot notation`:
+We can create an empty object and add properties and functionality to it as well.` dot notation `:
 
 ```
     const user2 = {}; //create an empty object
@@ -55,7 +47,7 @@ We can also create an empty object and assign properties to it using `dot notati
 
 ## Breaking DRY Principles
 
-=> The problem with creating objects like this is we always need to create separate objects for each user. and our code got so repetitive so we broke `DRY Principle` "Don't repeat yourself", and also not efficient if we have a lot of users.
+=> The problem with creating objects like this is we always need to create separate objects for each user. and our code got so repetitive that we broke the `DRY Principle` "Don't repeat yourself", and also not efficient if we have a lot of users.
 
 ## Creating Objects with Functions
 
@@ -80,10 +72,10 @@ How things work inside the javascript execution context:
 
 ![](images/img1.png?raw=true)
 
-> **Memory**: stands for global memory (store variables and objects...) of global Scope, and **local memory** stand for (variables and objects ...) that are available only within a specific local context (scope).
+> **Memory**: stands for global memory (store variables and objects...) of global Scope, and **local memory** stands for (variables and objects ...) that are available only within a specific local context (scope).
 
 
-This approach fixes our `DRY` problem and also it's simple and easy to reason about!, but it comes with another downside.Each time we create a new user we make space in our computer's memory for all our data and functions. But our functions are just copies.
+This approach fixes our `DRY` problem and also it's simple and easy to reason about!, but it comes with another downside. Each time we create a new user we make space in our computer's memory for all our data and functions. But our functions are just copies.
 
 ## Solution
 
