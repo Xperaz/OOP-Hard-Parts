@@ -11,8 +11,9 @@ When we call the constructor function with new in front we automate 2 things:
 
 But now we need to adjust how we write the body of CreateUser - how can we:
 
-- Could you refer to the auto-created object? : we can use `this`;
+- Could we refer to the auto-created object? : we can use `this`;
 - Know where to put our single copies of functions?: we can use `prototype inheritance`.
+  
 > More details about prototype inheritance are in the next sections.
 
 ## Functions are both objects and functions
@@ -83,7 +84,7 @@ Let's explain this piece of code getting help from memory flow:
 
     2. **`__proto__`**: It is a hidden property that has reference to `CreateUser.prototype`, so this property allows us to access all methods stored in the `CreateUser.prototype` object (`jump` and `play` in this case).
 
-    2. The `new` keyword auto returns the object at the end of the function to `user1`.
+    3. The `new` keyword auto returns the object at the end of the function to `user1`.
 
     > **local memory**: is the memory of the `CreateUser` function where the js engine creates a memory for `name`, `score`, and also for `object` created by `new`.
 
