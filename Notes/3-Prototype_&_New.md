@@ -1,16 +1,16 @@
 # Protorype and New
 
-In previous article we solve `DRY` problem but we got another problem, wich duplicate functions in every object.
+In the previous article, we solved the `DRY` problem but encountered another issue where functions were duplicated in every object.
 
 To solve this problem we can use `prototype`.
 
-## What is Prototype in javascript?
+## What is Prototype in Javascript?
 
 > **MDN**: Prototypes are the mechanism by which JavaScript objects inherit features from one another.
 
 ## Solve Duplication Problem using Prototype Chain
 
-> **MDN**: Every object in JavaScript has a built-in property, which is called its prototype. The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain. The chain ends when we reach a prototype that has null for its own prototype.
+> **MDN**: Every object in JavaScript has a built-in property, which is called its prototype. The prototype is itself an object, so the prototype will have its prototype, making what's called a prototype chain. The chain ends when we reach a prototype that has null for its prototype.
 
 ```
     function userCreator (name, score) {
@@ -31,9 +31,9 @@ To solve this problem we can use `prototype`.
 
 ```
 
-- The `Object.create() ` method creates a new object and allows us to specify an object that will be used as the new object's prototype. now `userFunctionStore` is prototype to `user1` object. => `user1` and `user2` have hidden bond up to `userFunctionCreator`.
+- The `Object.create() ` method creates a new object and allows us to specify an object that will be used as the new object's prototype. now `userFunctionStore` is a prototype of `user1` object. => `user1` and `user2` have hidden bond up to `userFunctionCreator`.
 
-Look at slide (19, 20) in [PDF](javascript-hard-parts-oop.pdf). for better understanding.
+Look at slides (19, and 20) in [PDF NOTES](https://github.com/Xperaz/OOP-Hard-Parts/blob/main/javascript-hard-parts-oop.pdf). for a better understanding.
 
 Memory flow of this code:
 
@@ -41,16 +41,16 @@ Memory flow of this code:
 
 
 - In the console when we print every object we notice lot of extra stuff, one of them is `__proto__`.
-- ** __proto__ **:  exist on every object we create, in our case when we return `newUser` object it brings with it its little hidden bond `__proto__` that have refrence link to `userFunctionStore`.
+- ** __proto__ **:  exist on every object we create, in our case when we return `newUser` object it brings with it its little hidden bond `__proto__` that has refrence link to `userFunctionStore`.
 
-- When we try to access `increment` function from `user1`, if this function not exist in `user1` object, javascript engine look on `__proto__` property that have link to `userFunctionStore` where it find `increment`. => this mecanism by javascript is prototype nature (feature), means it don't give up when it can't find something in an object directly, but instead looking elsewhere.
+- When we try to access `increment` function from `user1`, if this function not exist in `user1` object, javascript engine look on `__proto__` property that have link to `userFunctionStore` where it find `increment`. => this mecanism by javascript is prototype nature, means it don't give up when it can't find something in an object directly, but instead keep looking in prototype.
 
 > [!NOTE]  
-> `__proto__` and `prototype` are totally different things.
+> `__proto__` and `prototype` are totally different things. `prototype` is object and `__proto__` is refrence to an object.
 
 It' Sophisticated solution but not standard. javascript gives some tools to make it more simpler:
 
-see [Solution 3 autmation keyword new](Nots/4-New_Keyword.md)
+see [Solution 3 autmation keyword new](https://github.com/Xperaz/OOP-Hard-Parts/blob/main/Notes/4-New_Keyword.md)
 
 
 
