@@ -1,7 +1,8 @@
+# Default Prototype Chain
+
 ## Object Default **Proto**
 
-JavaScript uses this proto link to give objects, functions, and arrays a bunch of bonus functionality. All objects by
-default have **proto** :
+JavaScript uses this proto link to give objects, functions, and arrays extra functionalities. All objects by default have **proto** :
 
 ```
 const obj = {
@@ -42,7 +43,7 @@ And for `multiplyBy2.hasOwnProperty("score")` => the js engine follows the same 
 That's what we call Prototype chain, js engine keeps looking into `__Proto__` until **Proto** points to `null` then the chain end.
 
 > [!WARNING]  
-> **proto** is considered outdated and somewhat deprecated. The modern methods to get/set a prototype are: Object. getPrototypeOf(obj) – returns the [[Prototype]] of obj .
+> **Proto** is considered outdated and somewhat deprecated. The modern method to get/set a prototype is: getPrototypeOf(obj) – returns the [[Prototype]] of obj.
 
 ## Ressources
 
