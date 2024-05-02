@@ -1,6 +1,7 @@
+# OOP Paradigm
 ## What is OOP?
 
-OOP is an enormously (huge) popular paradigm for structuring complex code and data using objects.
+OOP is an enormously popular paradigm for structuring complex code and data using objects.
 
 ## What is a Paradigm?
 
