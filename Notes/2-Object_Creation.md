@@ -45,7 +45,7 @@ We can create an empty object and add properties and functionality to it as well
 
 ```
 
-## Breaking DRY Principles
+## Breaking DRY Principle
 
 => The problem with creating objects like this is we always need to create separate objects for each user. and our code got so repetitive that we broke the `DRY Principle` "Don't repeat yourself", and also not efficient if we have a lot of users.
 
