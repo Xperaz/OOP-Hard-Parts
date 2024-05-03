@@ -48,4 +48,5 @@ That's what we call Prototype chain, js engine keeps looking into `__Proto__` un
 ## Ressources
 
 [OOP Code Smith](https://csx.codesmith.io/units/object-oriented-programming)
+
 [JavaScript: What’s **proto**?](https://medium.com/dev-proto/understanding-proto-in-javascript-c5a42647f04)
