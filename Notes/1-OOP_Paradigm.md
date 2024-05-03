@@ -3,10 +3,7 @@
 
 OOP is an enormously popular paradigm for structuring complex code and data using objects.
 
-## What is a Paradigm?
-
-A paradigm means any approach to organizing our code that, makes it easy to add features and functionality.
-
+> Educative: OOP is the most popular programming paradigm used for software development and is taught as the standard way to code for most of a programmer’s educational career.
 ## Some advantages of OOP
 
 - Easy to add features and functionality
