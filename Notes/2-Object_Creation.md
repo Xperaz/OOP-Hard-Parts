@@ -19,7 +19,7 @@ const user1 = {
 console.log(user1); // { name: 'Phil', score: 4, increment: [Function: increment] }
 ```
 
-We can create an empty object and add properties and functionality to it as well.` dot notation `:
+We can create an empty object and add properties and functionality to it as well.using ` dot notation `:
 
 ```
     const user2 = {}; //create an empty object
