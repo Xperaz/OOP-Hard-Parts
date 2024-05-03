@@ -24,7 +24,7 @@ user1.incrementScore();
 console.log(user1); // { name: 'azedine', score: 11 }
 ```
 
-When scaling the solution to create a subclass, a problem may occur even though it works fine with a small use case.
+We will see how tough this solution would be, Even if it appears functional in small use cases.
 
 ## Create PaidUser Subclass using our earlier solution 2
 
@@ -88,8 +88,9 @@ In this scenario, the `call` and `apply` methods come in handy. In the given exa
 - `PaidUserCreator.prototype.incrementBalance` is a method added to the `PaidUserCreator`’s prototype. It’s only available on objects created with `new PaidUserCreator`.
 
 **Finally**
-A new `PaidUserCreator` object is created with `name: xperaz`, `score: 20`, and `balance: 150`. The `incrementScore` method is called on this object, increasing its score by 1.
-
+- A new `PaidUserCreator` object is created with `name: xperaz`, `score: 20`, and `balance: 150`. The `incrementScore` method is called on this object, increasing its score by 1.
+- The automation of `new` makes it a little bit difficult, but the solution works well.
+  
 Memory flow:
 
 ![](images/img10.png?raw=true)
